@@ -48,3 +48,5 @@ where the password is `password` (defined in [Dockerfile](./Dockerfile))
 
 From CLion you can configure [remote toolchain](https://www.jetbrains.com/help/clion/remote-projects-support.html)
 and use the same data to login to the image within IDE.
+
+https://github.com/avan1235/esp-idf-docker/assets/11787040/5edeb36d-051b-442a-a7f5-97c71aff37f6
