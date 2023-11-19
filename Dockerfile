@@ -58,7 +58,7 @@ RUN cd /opt && \
 
 RUN cd /opt/esp-idf && git submodule update --init --recursive && ./install.sh all
 
-RUN source /opt/esp-idf/export.sh
+RUN . /opt/esp-idf/export.sh
 RUN echo "if [ -f /root/.bashrc ]; then source /root/.bashrc; fi" >> /root/.bash_profile
 RUN echo "export IDF_PATH=/opt/esp-idf" >> /root/.bashrc
 RUN echo "export PATH=$(echo $PATH)" >> /root/.bashrc

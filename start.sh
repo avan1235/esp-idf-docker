@@ -12,5 +12,5 @@ if [[ "$*" == *"--no-device"* ]]
 then
     docker run -d --cap-add sys_ptrace -p 127.0.0.1:2222:22 --name "${CONTAINER_NAME}" "${IMAGE_TAG}"
 else
-    docker run -d --cap-add sys_ptrace -p 127.0.0.1:2222:22 --device=/dev/ttyUSB0 --name "${CONTAINER_NAME}" "${IMAGE_TAG}"
+    docker run -d --cap-add sys_ptrace -p 127.0.0.1:2222:22 --device=/dev/ttyACM1 --name "${CONTAINER_NAME}" "${IMAGE_TAG}"
 fi
