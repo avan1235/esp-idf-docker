@@ -1,6 +1,7 @@
 FROM debian:bookworm-slim
 
 ENV DEBIAN_FRONTEND=noninteractive
+ENV IDF_PATH=/opt/esp-idf
 
 RUN apt update  \
     && apt install -y  \
@@ -60,7 +61,7 @@ RUN cd /opt/esp-idf && git submodule update --init --recursive && ./install.sh a
 
 RUN . /opt/esp-idf/export.sh
 RUN echo "if [ -f /root/.bashrc ]; then source /root/.bashrc; fi" >> /root/.bash_profile
-RUN echo "export IDF_PATH=/opt/esp-idf" >> /root/.bashrc
+RUN echo "export IDF_PATH=$(echo IDF_PATH)" >> /root/.bashrc
 RUN echo "export PATH=$(echo $PATH)" >> /root/.bashrc
 
 RUN cd /opt/esp-idf/components && git clone --recursive https://github.com/espressif/esp32-camera.git
