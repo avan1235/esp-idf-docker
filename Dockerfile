@@ -58,9 +58,10 @@ RUN cd /opt && \
 
 RUN cd /opt/esp-idf && git submodule update --init --recursive && ./install.sh all
 
+RUN source /opt/esp-idf/export.sh
 RUN echo "if [ -f /root/.bashrc ]; then source /root/.bashrc; fi" >> /root/.bash_profile
 RUN echo "export IDF_PATH=/opt/esp-idf" >> /root/.bashrc
-RUN echo "export PATH=/opt/esp-idf/components/esptool_py/esptool:/opt/esp-idf/components/espcoredump:/opt/esp-idf/components/partition_table:/opt/esp-idf/components/app_update:/root/.espressif/tools/xtensa-esp-elf-gdb/$(ls /root/.espressif/tools/xtensa-esp-elf-gdb/)/xtensa-esp-elf-gdb/bin:/root/.espressif/tools/riscv32-esp-elf-gdb/$(ls /root/.espressif/tools/riscv32-esp-elf-gdb/)/riscv32-esp-elf-gdb/bin:/root/.espressif/tools/xtensa-esp32-elf/$(ls /root/.espressif/tools/xtensa-esp32-elf/)/xtensa-esp32-elf/bin:/root/.espressif/tools/xtensa-esp32s2-elf/$(ls /root/.espressif/tools/xtensa-esp32s2-elf/)/xtensa-esp32s2-elf/bin:/root/.espressif/tools/xtensa-esp32s3-elf/$(ls /root/.espressif/tools/xtensa-esp32s3-elf/)/xtensa-esp32s3-elf/bin:/root/.espressif/tools/riscv32-esp-elf/$(ls /root/.espressif/tools/riscv32-esp-elf/)/riscv32-esp-elf/bin:/root/.espressif/tools/esp32ulp-elf/$(ls /root/.espressif/tools/esp32ulp-elf/)/esp32ulp-elf/bin:/root/.espressif/tools/openocd-esp32/$(ls /root/.espressif/tools/openocd-esp32/)/openocd-esp32/bin:/root/.espressif/python_env/$(ls /root/.espressif/python_env/)/bin:/opt/esp-idf/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin" >> /root/.bashrc
+RUN echo "export PATH=$(echo $PATH)" >> /root/.bashrc
 
 RUN cd /opt/esp-idf/components && git clone --recursive https://github.com/espressif/esp32-camera.git
 
