@@ -42,7 +42,7 @@ You can login to created image using `ssh` with
 ssh root@localhost -p 2222
 ```
 
-where the password is `password` (defined in [Dockerfile](./Dockerfile))
+where the password is `password` (defined in [Dockerfile](docker/Dockerfile))
 
 ### CLion IDE
 
