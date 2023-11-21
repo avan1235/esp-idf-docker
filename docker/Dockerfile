@@ -68,7 +68,7 @@ RUN echo IDF_CLONE_BRANCH_OR_TAG=$IDF_CLONE_BRANCH_OR_TAG && \
     git clone --recursive \
       ${IDF_CLONE_BRANCH_OR_TAG:+-b $IDF_CLONE_BRANCH_OR_TAG} \
       $IDF_CLONE_URL $IDF_PATH && \
-    git config --system --add safe.directory $IDF_PATH && \
+    git config --system --add safe.directory $IDF_PATH
 
 RUN : \
   && update-ca-certificates --fresh \
