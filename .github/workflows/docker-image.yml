@@ -21,7 +21,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/espressif-idf-camera
+            ${{ secrets.DOCKERHUB_USERNAME }}/espressif-idf-ssh
           tags: |
             type=raw,value=latest,enable=${{ github.ref == format('refs/heads/{0}', 'master') }}
             type=sha,format=long

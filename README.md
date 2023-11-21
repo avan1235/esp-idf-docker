@@ -1,19 +1,17 @@
 # ESP IDF Docker Image
 
-[<img src="https://img.shields.io/badge/dockerhub-download-blue.svg?logo=docker">](https://hub.docker.com/repository/docker/avan1235/espressif-idf-camera)
+[<img src="https://img.shields.io/badge/dockerhub-download-blue.svg?logo=docker">](https://hub.docker.com/repository/docker/avan1235/espressif-idf-ssh)
 ![build status](https://img.shields.io/github/actions/workflow/status/avan1235/esp-idf-docker/docker-image.yml?branch=master)
 
 This repository has the definition for the environment with [ESP IDF](https://github.com/espressif/esp-idf)
-with the following modules included:
-
-- [esp32-camera](https://github.com/espressif/esp32-camera)
+with SSH configured to connect with IDE to the image.
 
 ## Installation
 
 You can pull the image with
 
 ```shell
-docker pull avan1235/espressif-idf-camera:latest
+docker pull avan1235/espressif-idf-ssh:latest
 ```
 
 and then use the [start.sh](./start.sh) script to start the image running in the background with

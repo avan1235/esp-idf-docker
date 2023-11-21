@@ -1,7 +1,7 @@
 #!/bin/bash
 
-CONTAINER_NAME="espressif_idf_camera"
-IMAGE_TAG="avan1235/espressif-idf-camera:latest"
+CONTAINER_NAME="espressif_idf_ssh"
+IMAGE_TAG="avan1235/espressif-idf-ssh:latest"
 
 ssh-keygen -f "$HOME/.ssh/known_hosts" -R "[localhost]:2222"
 ssh-keygen -f "$HOME/.ssh/known_hosts" -R "[127.0.0.1]:2222"
