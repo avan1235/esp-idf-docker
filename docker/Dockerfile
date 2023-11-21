@@ -3,7 +3,54 @@ FROM espressif/idf:latest
 RUN : \
   && apt-get update \
   && apt-get install -y \
+    apt-utils \
+    autoconf \
+    automake \
+    bison \
+    build-essential \
+    bzip2 \
+    ca-certificates \
+    ccache \
+    check \
+    clang \
+    cmake \
+    cmake  \
+    curl \
+    dfu-util \
+    dos2unix \
+    flex \
+    g++ \
+    gcc \
+    gdb \
+    git \
+    git-lfs \
+    gperf \
+    lcov \
+    libbsd-dev \
+    libffi-dev \
+    libglib2.0-0 \
+    libncurses-dev \
+    libpixman-1-0 \
+    libslirp0 \
+    libssl-dev  \
+    libtool \
+    libusb-1.0-0-dev \
+    locales-all \
+    make \
+    ninja-build \
     openssh-server \
+    python3 \
+    python3-pip \
+    python3-venv \
+    rsync \
+    ruby \
+    ssh \
+    tar \
+    unzip \
+    valgrind \
+    wget \
+    xz-utils \
+    zip \
   && apt-get autoremove -y \
   && rm -rf /var/lib/apt/lists/* \
   && :
