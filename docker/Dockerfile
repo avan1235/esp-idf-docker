@@ -66,6 +66,10 @@ RUN ( \
 
 RUN yes password | passwd root
 
+RUN echo "if [ -f /root/.bashrc ]; then source /root/.bashrc; fi" >> /root/.bash_profile
+RUN echo "export IDF_PATH=/opt/esp/idf" >> /root/.bashrc
+RUN echo "export IDF_TOOLS_PATH=/opt/esp" >> /root/.bashrc
+
 COPY entrypoint.sh /opt/esp/entrypoint.sh
 ENTRYPOINT [ "/opt/esp/entrypoint.sh" ]
 CMD ["/usr/sbin/sshd", "-D", "-e", "-f", "/etc/ssh/sshd_config_esp_idf"]
