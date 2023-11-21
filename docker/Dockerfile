@@ -79,7 +79,7 @@ RUN : \
   && rm -rf $IDF_TOOLS_PATH/dist \
   && :
 
-RUN idf.py add-dependency "espressif/esp32-camera"
+RUN . $IDF_PATH/export.sh && idf.py add-dependency "espressif/esp32-camera"
 
 ENV IDF_PYTHON_CHECK_CONSTRAINTS=no
 ENV IDF_CCACHE_ENABLE=1
