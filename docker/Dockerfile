@@ -59,6 +59,7 @@ RUN : \
 RUN ( \
     echo 'LogLevel DEBUG2'; \
     echo 'PermitRootLogin yes'; \
+    echo 'PermitUserEnvironment yes'; \
     echo 'PasswordAuthentication yes'; \
     echo 'Subsystem sftp /usr/lib/openssh/sftp-server'; \
   ) > /etc/ssh/sshd_config_esp_idf \
@@ -69,6 +70,10 @@ RUN yes password | passwd root
 RUN echo "if [ -f /root/.bashrc ]; then source /root/.bashrc; fi" >> /root/.bash_profile
 RUN echo "export IDF_PATH=/opt/esp/idf" >> /root/.bashrc
 RUN echo "export IDF_TOOLS_PATH=/opt/esp" >> /root/.bashrc
+
+RUN mkdir -p /root/.ssh
+RUN echo "IDF_PATH=/opt/esp/idf" >> /root/.ssh/environment
+RUN echo "IDF_TOOLS_PATH=/opt/esp" >> /root/.ssh/environment
 
 COPY set-path.sh /opt/esp/set-path.sh
 RUN /opt/esp/set-path.sh
