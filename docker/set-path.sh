@@ -1,5 +1,4 @@
-#!/usr/bin/env bash
-set -e
+#!/usr/bin/env sh
 
 . $IDF_PATH/export.sh
 
