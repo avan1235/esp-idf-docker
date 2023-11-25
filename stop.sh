@@ -1,5 +1,5 @@
 #!/bin/bash
 
-CONTAINER_NAME="espressif_idf_ssh"
+CONTAINER_NAME="esp_idf_ssh"
 
 docker stop "${CONTAINER_NAME}"
