@@ -67,13 +67,17 @@ RUN ( \
 
 RUN yes password | passwd root
 
+ARG IDF_TARGET
+
 RUN echo "if [ -f /root/.bashrc ]; then source /root/.bashrc; fi" >> /root/.bash_profile
 RUN echo "export IDF_PATH=/opt/esp/idf" >> /root/.bashrc
 RUN echo "export IDF_TOOLS_PATH=/opt/esp" >> /root/.bashrc
+RUN echo "export IDF_TARGET=${IDF_TARGET}" >> /root/.bashrc
 
 RUN mkdir -p /root/.ssh
 RUN echo "IDF_PATH=/opt/esp/idf" >> /root/.ssh/environment
 RUN echo "IDF_TOOLS_PATH=/opt/esp" >> /root/.ssh/environment
+RUN echo "IDF_TARGET=${IDF_TARGET}" >> /root/.ssh/environment
 
 COPY set-path.sh /opt/esp/set-path.sh
 RUN /opt/esp/set-path.sh

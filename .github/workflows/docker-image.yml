@@ -10,6 +10,9 @@ on:
 
 jobs:
   build:
+    strategy:
+      matrix:
+        idf_target: [ esp32, esp32s2, esp32c3, esp32s3, esp32c2, esp32c6, esp32h2, linux, esp32p4 ]
     runs-on: ubuntu-latest
     steps:
       -
@@ -21,10 +24,9 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/espressif-idf-ssh
+            ${{ secrets.DOCKERHUB_USERNAME }}/esp-idf-${{ matrix.idf_target }}-ssh
           tags: |
             type=raw,value=latest,enable=${{ github.ref == format('refs/heads/{0}', 'master') }}
-            type=sha,format=long
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v2
@@ -47,3 +49,5 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           platforms: linux/amd64
+          build-args: |
+            IDF_TARGET=${{ matrix.idf_target }}
