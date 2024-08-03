@@ -1,6 +1,6 @@
 # ESP IDF Docker Image
 
-[<img src="https://img.shields.io/badge/dockerhub-download-blue.svg?logo=docker">](https://hub.docker.com/search?q=avan1235%2Fesp-idf)
+[<img src="https://img.shields.io/badge/dockerhub-download-blue.svg?logo=docker">](https://hub.docker.com/u/avan1235)
 ![build status](https://img.shields.io/github/actions/workflow/status/avan1235/esp-idf-docker/docker-image.yml?branch=master)
 
 This repository has the definition for the environment with [ESP IDF](https://github.com/espressif/esp-idf)
